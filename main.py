@@ -112,7 +112,7 @@ class KlockcraftButton:
     def show(self):
         self.button.place(x=self.x, y=self.y)
 
-def open_discord(): webbrowser.open('')
+def open_discord(): webbrowser.open('https://discord.gg/C6bfwE7W')
 
 def choose_def_steve(): 
     choose_character('def_steve')
