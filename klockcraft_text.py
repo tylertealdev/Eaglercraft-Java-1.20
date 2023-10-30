@@ -1,6 +1,6 @@
 import turtle
 
-class EaglerText:
+class KlockcraftText:
     def __init__(self):
         turtle.tracer(0)
         self.pen = turtle.Turtle()
@@ -189,7 +189,7 @@ class EaglerText:
         
 
 #remember to remove this part later, its just a test!
-eaglertext = EaglerText()
-eaglertext.draw_text('abcdefghij', 'black', 2, 0, 0)
+klockcrafttext = KlockcraftText()
+klockcrafttext.draw_text('abcdefghij', 'black', 2, 0, 0)
 
 turtle.mainloop()
