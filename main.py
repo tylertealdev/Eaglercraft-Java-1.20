@@ -46,7 +46,6 @@ def_alex_option_photo = extract_png_asset('options/def_alex_option')
 herobrine_option_photo = extract_png_asset('options/herobrine_option')
 noob_option_photo = extract_png_asset('options/noob_option')
 more_skins_option_photo = extract_png_asset('options/more_skins_option')
-discord_photo = extract_png_asset('discord')
 pets_button_photo = extract_png_asset('buttons/pets')
 pets_hover_button_photo = extract_png_asset('buttons/pets_hover')
 login2_photo = extract_png_asset('login2')
@@ -69,6 +68,13 @@ boxer_steve_option_photo = extract_png_asset('options/boxer_steve_option')
 boxer_alex_option_photo = extract_png_asset('options/boxer_alex_option')
 cyclist_steve_option_photo = extract_png_asset('options/cyclist_steve_option')
 cyclist_alex_option_photo = extract_png_asset('options/cyclist_alex_option')
+more_button_photo = extract_png_asset('buttons/more')
+more_hover_button_photo = extract_png_asset('buttons/more_hover')
+discord_button_photo = extract_png_asset('buttons/discord')
+discord_hover_button_photo = extract_png_asset('buttons/discord_hover')
+blank_dirt_photo = extract_png_asset('blank_dirt')
+github_fork_button_photo = extract_png_asset('buttons/github_fork')
+github_fork_button_hover_photo = extract_png_asset('buttons/github_fork_hover')
 
 root.iconphoto(False, klockicon_photo)
 
@@ -132,6 +138,8 @@ class KlockcraftButton:
         self.button.place(x=self.x, y=self.y)
 
 def open_discord(): webbrowser.open('https://discord.gg/C6bfwE7W')
+def open_github(): webbrowser.open('https://github.com/Klockcraft-Offical/Klockcraft-Java-Edition-1.20/fork')
+
 
 def choose_def_steve(): 
     choose_character('def_steve')
@@ -162,10 +170,10 @@ def more_skins():
     more_skins_option.hide()
     screename_bar.hide()
     pets_button.hide()
-    discord_button.hide()
     done_button.hide()
     login_dropdown.hide()
     login_label.place_forget()
+    more_button.hide()
 
     login2_label = Label(root, image=login2_photo)
     login2_label.place(x=0, y=0)
@@ -184,17 +192,57 @@ def more_skins():
         more_skins_option.show()
         screename_bar.show()
         pets_button.show()
-        discord_button.show()
         done_button.show()
         login_dropdown.show()
+        more_button.show()
         login_label.place(x=0, y=0)
+
+
     more_skins_done_button = KlockcraftButton(300, 550, done_photo, done_hover_photo, return_normal_login)
     if char == 'def_steve': login_avatar2.config(image=def_steve_photo)
     elif char == 'def_alex': login_avatar2.config(image=def_alex_photo)
     elif char == 'herobrine': login_avatar2.config(image=herobrine_photo)
     elif char == 'noob': login_avatar2.config(image=noob_photo)
     
+def open_more():
+    def_steve_option.hide()
+    def_alex_option.hide()
+    herobrine_option.hide()
+    noob_option.hide()
+    more_skins_option.hide()
+    screename_bar.hide()
+    pets_button.hide()
+    done_button.hide()
+    login_dropdown.hide()
+    login_label.place_forget()
+    more_button.hide()
+
+    blank_dirt_label = Label(root, image=blank_dirt_photo)
+    blank_dirt_label.place(x=0, y=0)
+
+    discord_button = KlockcraftButton(230, 30, discord_button_photo, discord_hover_button_photo, open_discord)
+    fork_github_button = KlockcraftButton(230, 80, github_fork_button_photo, github_fork_button_hover_photo, open_github)
+
+    def return_normal_login():
+        blank_dirt_label.place_forget()
+        discord_button.hide()
+        fork_github_button.hide()
+        more_done_button.hide()
+        def_steve_option.show()
+        def_alex_option.show()
+        herobrine_option.show()
+        noob_option.show()
+        more_skins_option.show()
+        screename_bar.show()
+        pets_button.show()
+        done_button.show()
+        login_dropdown.show()
+        more_button.show()
+        login_label.place(x=0, y=0)
     
+
+    more_done_button = KlockcraftButton(270, 550, done_photo, done_hover_photo, return_normal_login)
+
 
 
 def_steve_option = KlockcraftButton(350, 340, def_steve_option_photo, None, choose_def_steve)
@@ -232,8 +280,7 @@ login_dropdown = KlockcraftButton(350, 290, dropdown_def_steve_photo, None, kloc
 
 screename_bar = EntryBar(350, 160)
 done_button = KlockcraftButton(50, 550, done_photo, done_hover_photo)
-discord_button = KlockcraftButton(700, 520, discord_photo, None, open_discord)
 pets_button = KlockcraftButton(400, 540, pets_button_photo, pets_hover_button_photo, None)
-
+more_button = KlockcraftButton(670, 520, more_button_photo, more_hover_button_photo, open_more)
 
 root.mainloop()
