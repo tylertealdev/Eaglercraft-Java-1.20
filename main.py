@@ -4,7 +4,7 @@ import webbrowser
 
 
 root = Tk()
-root.title('Klockcraft 1.20')
+root.title('Klockcraft Java Edition 1.20')
 root.geometry('800x600')
 root.resizable(False, False)
 
