@@ -181,7 +181,17 @@ def more_skins():
     char = chosen_character[0]
     login_avatar2 = Label(root, image=def_steve_photo)
     login_avatar2.place(x=50, y=50)
+
+    developer_steve_option = KlockcraftButton(300, 70, developer_steve_option_photo, None, None)
+    developer_alex_option = KlockcraftButton(300, 120, developer_alex_option_photo, None, None)
+    tuxedo_steve_option = KlockcraftButton(300, 170, tuxedo_steve_option_photo, None, None)
+    tuxedo_alex_option = KlockcraftButton(300, 220, tuxedo_alex_option_photo, None, None)
+    prisoner_steve_option = KlockcraftButton(300, 270, prisoner_steve_option_photo, None, None)
     def return_normal_login():
+        developer_steve_option.hide()
+        developer_alex_option.hide()
+        tuxedo_steve_option.hide()
+        tuxedo_alex_option.hide()
         more_skins_done_button.hide()
         login_avatar2.place_forget()
         login2_label.place_forget()
