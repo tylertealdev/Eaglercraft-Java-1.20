@@ -179,7 +179,11 @@ def more_skins():
     login2_label.place(x=0, y=0)
 
     char = chosen_character[0]
-    login_avatar2 = Label(root, image=def_steve_photo)
+    if char == 'def_steve': char = def_steve_photo
+    elif char == 'def_alex': char = def_alex_photo
+    elif char == 'noob': char = noob_photo
+    elif char == 'herobrine': char = herobrine_photo
+    login_avatar2 = Label(root, image=char)
     login_avatar2.place(x=50, y=50)
 
     developer_steve_option = KlockcraftButton(300, 70, developer_steve_option_photo, None, None)
@@ -187,7 +191,18 @@ def more_skins():
     tuxedo_steve_option = KlockcraftButton(300, 170, tuxedo_steve_option_photo, None, None)
     tuxedo_alex_option = KlockcraftButton(300, 220, tuxedo_alex_option_photo, None, None)
     prisoner_steve_option = KlockcraftButton(300, 270, prisoner_steve_option_photo, None, None)
+    prisoner_alex_option = KlockcraftButton(300, 320, prisoner_alex_option_photo, None, None)
+    tennis_steve_option = KlockcraftButton(300, 370, tennis_steve_option_photo, None, None)
+    tennis_alex_option = KlockcraftButton(300, 420, tennis_alex_option_photo, None, None)
+
+    more_skins2_button = KlockcraftButton(300, 480, more_skins_option_photo, None, None)
+
     def return_normal_login():
+        more_skins2_button.hide()
+        tennis_alex_option.hide()
+        tennis_steve_option.hide()
+        prisoner_steve_option.hide()
+        prisoner_alex_option.hide()
         developer_steve_option.hide()
         developer_alex_option.hide()
         tuxedo_steve_option.hide()
