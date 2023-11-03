@@ -137,7 +137,7 @@ class KlockcraftButton:
     def show(self):
         self.button.place(x=self.x, y=self.y)
 
-def open_discord(): webbrowser.open('https://discord.gg/C6bfwE7W')
+def open_discord(): webbrowser.open('https://discord.gg/pKfvNxAv')
 def open_github(): webbrowser.open('https://github.com/Klockcraft-Offical/Klockcraft-Java-Edition-1.20/fork')
 
 
