@@ -162,6 +162,51 @@ def choose_noob():
     login_avatar.config(image=noob_photo)
     login_dropdown.change_photo(dropdown_noob_photo)
 
+def open_pets():
+    def_steve_option.hide()
+    def_alex_option.hide()
+    herobrine_option.hide()
+    noob_option.hide()
+    more_skins_option.hide()
+    screename_bar.hide()
+    pets_button.hide()
+    done_button.hide()
+    login_dropdown.hide()
+    login_label.place_forget()
+    more_button.hide()
+
+    login2_label = Label(root, image=login2_photo)
+    login2_label.place(x=0, y=0)
+
+    char = chosen_character[0]
+    if char == 'def_steve': char = def_steve_photo
+    elif char == 'def_alex': char = def_alex_photo
+    elif char == 'noob': char = noob_photo
+    elif char == 'herobrine': char = herobrine_photo
+    login_avatar2 = Label(root, image=char)
+    login_avatar2.place(x=50, y=50)
+
+
+    def return_normal_login():
+        more_skins_done_button.hide()
+        login_avatar2.place_forget()
+        login2_label.place_forget()
+        def_steve_option.show()
+        def_alex_option.show()
+        herobrine_option.show()
+        noob_option.show()
+        more_skins_option.show()
+        screename_bar.show()
+        pets_button.show()
+        done_button.show()
+        login_dropdown.show()
+        more_button.show()
+        login_label.place(x=0, y=0)
+
+
+    more_skins_done_button = KlockcraftButton(300, 550, done_photo, done_hover_photo, return_normal_login)
+    
+
 def more_skins():
     def_steve_option.hide()
     def_alex_option.hide()
@@ -300,7 +345,7 @@ login_dropdown = KlockcraftButton(350, 290, dropdown_def_steve_photo, None, kloc
 
 screename_bar = EntryBar(350, 160)
 done_button = KlockcraftButton(50, 550, done_photo, done_hover_photo)
-pets_button = KlockcraftButton(400, 540, pets_button_photo, pets_hover_button_photo, None)
+pets_button = KlockcraftButton(400, 540, pets_button_photo, pets_hover_button_photo, open_pets)
 more_button = KlockcraftButton(670, 520, more_button_photo, more_hover_button_photo, open_more)
 
 root.mainloop()
