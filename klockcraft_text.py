@@ -190,6 +190,6 @@ class KlockcraftText:
 
 #remember to remove this part later, its just a test!
 klockcrafttext = KlockcraftText()
-klockcrafttext.draw_text('abcdefghij', 'black', 2, 0, 0)
+klockcrafttext.draw_text('Just a test for the text.', 'black', 2, 0, 0)
 
 turtle.mainloop()
