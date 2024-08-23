@@ -4,7 +4,7 @@ import webbrowser
 
 
 root = Tk()
-root.title('Klockcraft Java Edition 1.20')
+root.title('Ravencraft Java Edition 1.20')
 root.geometry('800x600')
 root.resizable(False, False)
 
@@ -138,7 +138,7 @@ class KlockcraftButton:
         self.button.place(x=self.x, y=self.y)
 
 def open_discord(): webbrowser.open('https://discord.gg/pKfvNxAv')
-def open_github(): webbrowser.open('https://github.com/Klockcraft-Offical/Klockcraft-Java-Edition-1.20/fork')
+def open_github(): webbrowser.open('https://github.com/RaveTek/ravencraft-1.20/fork/')
 
 
 def choose_def_steve(): 
